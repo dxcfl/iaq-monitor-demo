@@ -1,0 +1,21 @@
+&i2c1 {
+        status = "okay";
+       sda-pin = <34>; // P1.02 (34)
+       scl-pin = <35>; // P1.03 (35)
+
+	/* Sparkfun Environment Combo uses second I2C address */
+        ccs811: ccs811@5b {
+                compatible = "ams,ccs811";
+                reg = <0x5a>;
+                label = "CCS811";
+                irq-gpios = <&gpio0 36 GPIO_ACTIVE_LOW>; // P1.04 (36)
+                wake-gpios = <&gpio0 5 GPIO_ACTIVE_LOW>;
+                reset-gpios = <&gpio0 6 GPIO_ACTIVE_LOW>;
+        };
+
+        bme280@76 {
+		compatible = "bosch,bme280";
+		reg = <0x76>;
+		label = "BME280";
+	};
+};
