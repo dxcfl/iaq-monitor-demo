@@ -1,3 +1,23 @@
+/*
+SPDX-License-Identifier: GPL-3.0-or-later
+
+iaq-monitor-demo
+Copyright (C) 2021  dxcfl
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
 #include <device.h>
 #include <devicetree.h>
 #include <drivers/sensor.h>
@@ -77,7 +97,7 @@ static const char *now_str()
  * resonse to transport our IAQ rating.
 */
 
-	/*
+/*
 	 * Set Advertisement data. Based on the Eddystone specification:
  	 * https://github.com/google/eddystone/blob/master/protocol-specification.md
  	 * https://github.com/google/eddystone/tree/master/eddystone-url
@@ -94,7 +114,7 @@ static const struct bt_data ad[] = {
 				  0x08) /* .org */
 };
 
-	/* Set Scan Response data */
+/* Set Scan Response data */
 static const struct bt_data sd[] = {
 	BT_DATA(BT_DATA_NAME_COMPLETE, DEVICE_NAME, DEVICE_NAME_LEN),
 	BT_DATA(BT_DATA_NAME_SHORTENED, DEVICE_NAME, DEVICE_NAME_LEN),
